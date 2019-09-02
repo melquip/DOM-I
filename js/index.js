@@ -6,25 +6,25 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
-    "img-src": "img/logo.png"
+    "nav-img-src": "img/logo.png"
   },
   "cta": {
     "h1": "DOM Is Awesome",
     "button": "Get Started",
-    "img-src": "img/header-img.png"
+    "cta-img-src": "img/header-img.png"
   },
   "main-content": {
     "features-h4":"Features",
     "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "about-h4":"About",
     "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "middle-img-src": "img/mid-page-accent.jpg",
     "services-h4":"Services",
     "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "product-h4":"Product",
     "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "vision-h4":"Vision",
     "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "middle-img-src": "img/mid-page-accent.jpg",
   },
   "contact": {
     "contact-h4" : "Contact",
@@ -40,24 +40,33 @@ const siteContent = {
 let navLinks = document.querySelectorAll('header nav a');
 navLinks.forEach((link, i) => link.textContent = siteContent.nav['nav-item-' + (i + 1)]);
 let logoImg = document.getElementById('logo-img');
-logoImg.src = siteContent.nav["img-src"];
+logoImg.src = siteContent.nav['nav-img-src'];
 let ctaH1 = document.querySelectorAll('.cta h1');
 let ctaBtn = document.querySelectorAll('.cta button');
-let ctaImg = document.getElementById('logo-img');
-ctaImg.src = siteContent.cta["img-src"];
+let ctaImg = document.getElementById('cta-img');
+ctaImg.src = siteContent.cta['cta-img-src'];
+
+let features = document.querySelector('.main-content .top-content .text-content:first-child');
+features.children[0].textContent = siteContent['main-content']['features-h4'];
+features.children[1].textContent = siteContent['main-content']['features-content'];
+let about = document.querySelector('.main-content .top-content .text-content:last-child');
+about.children[0].textContent = siteContent['main-content']['about-h4'];
+about.children[1].textContent = siteContent['main-content']['about-content'];
+let services = document.querySelector('.main-content .bottom-content .text-content:first-child');
+services.children[0].textContent = siteContent['main-content']['services-h4'];
+services.children[1].textContent = siteContent['main-content']['services-content'];
+let product = document.querySelector('.main-content .bottom-content .text-content:nth-child(2)');
+product.children[0].textContent = siteContent['main-content']['product-h4'];
+product.children[1].textContent = siteContent['main-content']['product-content'];
+let vision = document.querySelector('.main-content .bottom-content .text-content:last-child');
+vision.children[0].textContent = siteContent['main-content']['vision-h4'];
+vision.children[1].textContent = siteContent['main-content']['vision-content'];
+
+let middleImg = document.getElementById('middle-img');
+middleImg.src = siteContent['main-content']['middle-img-src'];
+
+
 /*
-main-content
-  features-h4
-  features-content
-  about-h4
-  about-content
-  middle-img
-  services-h4
-  services-content
-  product-h4
-  product-content
-  vision-h4
-  vision-content
 contact
   contact-h4
   address
