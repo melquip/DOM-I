@@ -17,7 +17,7 @@ function startCounter() {
 			clearInterval(counter);
 			start.removeAttribute('disabled');
 		}
-	}, 1);
+	}, 10);
 }
 function updateUI() {
 	msTens.textContent = msTensCounter;
@@ -28,7 +28,8 @@ function updateUI() {
 function resetCounter() {
 	canCount = false;
 	start.removeAttribute('disabled');
-	document.querySelectorAll('.digit').forEach(digit => digit.style = '');
+	document.querySelector('.digits').classList.remove('complete');
+	document.querySelectorAll('.digit').forEach(digit => digit.classList.remove('redDigit'));
 	msTensCounter = msHundredsCounter = secondOnesCounter = secondTensCounter = 0;
 	updateUI();
 	clearInterval(counter);
@@ -48,7 +49,8 @@ function calculateTime() {
 		secondTensCounter++;
 	}
 	if (secondTensCounter === 1) {
-		document.querySelectorAll('.digit').forEach(digit => digit.style.color = 'red');
+		document.querySelector('.digits').classList.add('complete');
+		document.querySelectorAll('.digit').forEach(digit => digit.classList.add('redDigit'));
 		canCount = false;
 	}
 }
