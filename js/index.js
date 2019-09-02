@@ -65,13 +65,11 @@ vision.children[1].textContent = siteContent['main-content']['vision-content'];
 let middleImg = document.getElementById('middle-img');
 middleImg.src = siteContent['main-content']['middle-img-src'];
 
+let contact = document.querySelector('.contact');
+contact.children[0].textContent = siteContent.contact['contact-h4'];
+contact.children[1].textContent = siteContent.contact.address;
+contact.children[2].textContent = siteContent.contact.phone;
+contact.children[3].textContent = siteContent.contact.email;
 
-/*
-contact
-  contact-h4
-  address
-  phone
-  email
-footer
-  copyright
-*/
+let footerCopyright = document.querySelector('footer p:first-child');
+footerCopyright.textContent = siteContent.footer.copyright;
