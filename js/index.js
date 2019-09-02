@@ -86,3 +86,5 @@ footerCopyright.textContent = siteContent.footer.copyright;
 //stretch
 let heading4 = document.querySelectorAll('h4');
 heading4.forEach(h => h.style.color = 'blue');
+footerCopyright.style.color = 'red';
+ctaH1.style.color = 'pink';
