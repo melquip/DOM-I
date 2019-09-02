@@ -11,7 +11,7 @@ const siteContent = {
     "nav-img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br/>Is<br/>Awesome",
     "button": "Get Started",
     "cta-img-src": "img/header-img.png"
   },
@@ -30,7 +30,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br/>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -57,7 +57,7 @@ navLinks.forEach((link, i) => {
 let logoImg = document.getElementById('logo-img');
 logoImg.src = siteContent.nav['nav-img-src'];
 let ctaH1 = document.querySelector('.cta h1');
-ctaH1.textContent = siteContent.cta.h1;
+ctaH1.innerHTML = siteContent.cta.h1;
 let ctaBtn = document.querySelector('.cta button');
 ctaBtn.textContent = siteContent.cta.button;
 let ctaImg = document.getElementById('cta-img');
@@ -76,7 +76,7 @@ middleImg.src = siteContent['main-content']['middle-img-src'];
 
 let contact = document.querySelector('.contact');
 contact.children[0].textContent = siteContent.contact['contact-h4'];
-contact.children[1].textContent = siteContent.contact.address;
+contact.children[1].innerHTML = siteContent.contact.address;
 contact.children[2].textContent = siteContent.contact.phone;
 contact.children[3].textContent = siteContent.contact.email;
 
