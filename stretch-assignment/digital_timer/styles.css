@@ -2,6 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .digit {
@@ -11,4 +12,33 @@ body {
 
 .redDigit {
   color: red;
+}
+
+.digits {
+  padding: 0 12px;
+  background-color: lightcoral;
+}
+.digits.complete {
+  background-color: lightskyblue;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 40px;
+  width: 100px;
+  border: 1px solid rgba(0,0,0,.5);
+}
+
+#start {
+  margin-top: 30px;
+  background-color: lightskyblue;
+}
+
+#reset {
+  margin-top: -1px;
+  background-color: lightcoral;
 }
